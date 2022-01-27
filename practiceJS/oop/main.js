@@ -32,3 +32,68 @@ console.log(person3.fullName());
 console.log(person1.calcAge());
 console.log(person2.calcAge());
 console.log(person3.calcAge());
+
+
+
+
+
+
+// Sub Class
+// Inheritance
+
+class Person {   // Base class
+    constructor (fName, lName) {
+        this.firstName = fName;
+        this.lastName = lName;
+    }
+
+    greetings () {
+        return `Hello ${this.firstName} ${this.lastName}`
+    }
+
+}
+
+class Customer extends Person {  // sub class
+    constructor (fName, lName, phone, membership) {
+        super(fName, lName)
+        this.phone = phone;
+        this.membership = membership;
+    }
+
+    fullName () {
+        return `${this.fName} ${this.lName}`;
+    }
+}
+
+let person1 = new Person('Saiful', 'Emon');
+console.log(person1.firstName);
+
+let customer1 = new Customer('Saiful', 'Islam', '5645641', '667');
+console.log(customer1.fullName());
+console.log(customer1.greetings());
+
+
+
+
+
+// static function
+class Student {
+    constructor (fname, roll) {
+        this.nam = fname;
+        this.roll = roll;
+    }
+
+    greetings () {
+        console.log(`Hello ${this.nam}!`);
+    }
+
+    static test () {
+        console.log('I am static function');
+    }
+}
+
+let stu1 = new Student('Saiful Emon', 484079);
+
+console.log(stu1.greetings());
+console.log(Student.test());
+
