@@ -1,5 +1,5 @@
 // Error Handling
-/*
+
 console.log('Before Error!');
 
 try {
@@ -18,7 +18,7 @@ finally {
 }
 
 console.log('After Error!');
-*/
+
 
 
 let a = 16;
