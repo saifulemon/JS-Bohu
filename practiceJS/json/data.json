@@ -1,0 +1,28 @@
+{
+    "person": [
+        {
+            "name": "Saiful",
+            "age": 20,
+            "hometown": "feni",
+            "married": false
+        },
+        {
+            "name": "Noman",
+            "age": 20,
+            "hometown": "feni",
+            "married": false
+        },
+        {
+            "name": "Hasnat",
+            "age": 19,
+            "hometown": "feni",
+            "married": false
+        },
+        {
+            "name": "Mahir",
+            "age": 20,
+            "hometown": "feni",
+            "married": true
+        }
+    ]
+}
