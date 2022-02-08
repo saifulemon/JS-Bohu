@@ -1,4 +1,3 @@
-/*
 document.getElementById('get-data').addEventListener('click', loadData);
 
 function loadData() {
@@ -19,7 +18,7 @@ function loadData() {
     }
     xhr.send();
 }
-*/
+
 
 
 
@@ -56,3 +55,83 @@ function loadjokes(e) {
 
     xhr.send();
 }
+
+
+
+
+
+
+// callback function 
+
+setTimeout(function () {
+    //console.log('Hello World');
+}, 2000);
+
+
+let persons = [
+    {firstName: 'Saiful', lastName: 'Emon'},
+    {firstName: 'Abu', lastName: 'Hasnat'},
+    {firstName: 'Saikat', lastName: 'Noman'}
+]
+
+function creatPerson(person) {
+    setTimeout(function () {
+        persons.push(person);
+    }, 3000);
+}
+
+
+function getPerson() {
+    setTimeout(function () {
+        let output = '';
+        persons.forEach(function (item) {
+            output += `<li>${item.firstName} ${item.lastName}</li>`;
+        });
+        document.getElementById('output').innerHTML = output;
+    }, 1000);
+}
+
+creatPerson({firstName: 'Saiful', lastName: 'Islam'});
+getPerson();
+
+
+
+
+setTimeout(function () {
+    //console.log('Hello World');
+}, 2000);
+
+
+let persons = [
+    {firstName: 'Saiful', lastName: 'Emon'},
+    {firstName: 'Abu', lastName: 'Hasnat'},
+    {firstName: 'Saikat', lastName: 'Noman'}
+]
+
+function creatPerson(person) {
+    let prom = new Promise(function (resolve, reject){
+        persons.push(person);
+        let error = true;
+        if (!error) {
+            resolve(); 
+        } else {
+            reject('Error!: Something wrong!');    
+        }
+    });
+    return prom;
+}
+
+function getPerson() {
+    setTimeout(function () {
+        let output = '';
+        persons.forEach(function (item) {
+            output += `<li>${item.firstName} ${item.lastName}</li>`;
+        });
+        document.getElementById('output').innerHTML = output;
+    }, 1000);
+}
+
+creatPerson({firstName: 'Saiful', lastName: 'Islam'}).then(getPerson)
+.catch(function (err) {
+    console.log(err);
+});
